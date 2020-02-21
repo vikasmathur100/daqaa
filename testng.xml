@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BDD Test Suite" verbose="1" parallel="tests"
+	thread-count="3" configfailurepolicy="continue">
+	<test name="DAQAA Automation Tests - Chrome" annotations="JDK"
+		preserve-order="true">
+		<parameter name="browserType" value="chrome" />
+		<classes>
+			<class name="com.google.runner.TestRunner" />
+		</classes>
+	</test>
+	<test name="DAQAA Automation Tests - IE11" annotations="JDK" preserve-order="true">
+		<parameter name="browserType" value="iexplore" />
+		<classes>
+			<class name="com.google.runner.TestRunner" />
+		</classes>
+	</test>
+	<test name="DAQAA Automation Tests - Firefox" annotations="JDK" preserve-order="true">
+		<parameter name="browserType" value="firefox" />
+		<classes>
+			<class name="com.google.runner.TestRunner" />
+		</classes>
+	</test>
+</suite>

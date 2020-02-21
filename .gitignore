@@ -1,0 +1,9 @@
+/target
+/.settings
+/bin
+.classpath
+.project
+/Reports
+/extent-reports
+/test-output
+/output
