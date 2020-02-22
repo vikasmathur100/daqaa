@@ -136,7 +136,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>Northern Trust</projectName>
+							<projectName>DAQAA</projectName>
 							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
 							<cucumberOutput>target/cucumber-reports/json-reports</cucumberOutput>
 							<buildNumber>1</buildNumber>
