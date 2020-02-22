@@ -8,7 +8,7 @@ node('master') {
             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [
                 [name: '*/master']
             ], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [
-                [credentialsId: env.StashCredentialsId, url: 'ssh:git@github.com:vikasmathur100/daqaa.git']
+                [credentialsId: env.StashCredentialsId, url: 'https://github.com/vikasmathur100/daqaa.git']
             ]];
         }
 
