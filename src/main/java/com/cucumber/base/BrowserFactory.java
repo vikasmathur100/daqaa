@@ -88,10 +88,10 @@ public class BrowserFactory {
 		try {
 			sys = new ConfigManager();
 			String cloud = sys.getProperty("Cloud.Host.URL");
-			capabilities = new DesiredCapabilities();
-			capabilities.setCapability("browser", browserType);
-			capabilities.setCapability("browser_version", browserVersion);
-			capabilities.setCapability("os_version", OSName);
+			capabilities = DesiredCapabilities.chrome();
+	        capabilities.setCapability("username", "vikasmathur");
+	        capabilities.setCapability("accessKey", "76ffb152-d07e-42f0-a41a-0f9bb8c99078");
+			capabilities.setCapability("platform", OSName);
 			capabilities.setCapability("name", session);
 			driver = new RemoteWebDriver(new URL(cloud), capabilities);
 		} catch (Exception e) {
