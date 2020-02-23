@@ -4,14 +4,10 @@
 	thread-count="3" configfailurepolicy="continue">
 		<test name="DAQAA Automation Tests - Chrome" annotations="JDK"
 		preserve-order="true">
-		<parameter name="browserType" value="chrome" />
-		<classes>
-			<class name="com.google.runner.TestRunner" />
-		</classes>
-	</test>
-	<test name="DAQAA Automation Tests - Firefox" annotations="JDK"
-		preserve-order="true">
-		<parameter name="browserType" value="firefox" />
+		<parameter name="browserType" value="Chrome" />
+		<parameter name="browserVersion" value="80" />
+	   <parameter name="OSName" value="Windows 10"/>
+       <parameter name="session" value="DAQAA Automation Tests"/>
 		<classes>
 			<class name="com.google.runner.TestRunner" />
 		</classes>

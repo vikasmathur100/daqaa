@@ -91,8 +91,7 @@ public class BrowserFactory {
 			capabilities = new DesiredCapabilities();
 			capabilities.setCapability("browser", browserType);
 			capabilities.setCapability("browser_version", browserVersion);
-			capabilities.setCapability("os", OSName);
-			capabilities.setCapability("os_version", OSVersion);
+			capabilities.setCapability("os_version", OSName);
 			capabilities.setCapability("name", session);
 			driver = new RemoteWebDriver(new URL(cloud), capabilities);
 		} catch (Exception e) {

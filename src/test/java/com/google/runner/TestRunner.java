@@ -64,8 +64,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 		browser = browserType;
 		browserForExtent = browserForExtent + " " + browserType;
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
-
-
+		
 		if (appData.getProperty("TypeOfExecution").equalsIgnoreCase("Linear")) {
 			setDriver(new BrowserFactory().init(browserType, browserVersion, OSName, OSVersion, session));
 		} else if (appData.getProperty("TypeOfExecution").equalsIgnoreCase("Local")) {
