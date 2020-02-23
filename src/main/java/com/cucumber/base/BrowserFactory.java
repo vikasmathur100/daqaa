@@ -81,6 +81,7 @@ public class BrowserFactory {
 		options.setCapability("IgnoreZoomSetting", true);
 		options.setCapability("UnexpectedAlertBehavior", "accept");
 		return new InternetExplorerDriver(options);
+
 	}
 
 	public WebDriver init(String browserType, String browserVersion, String OSName, String OSVersion, String session) {

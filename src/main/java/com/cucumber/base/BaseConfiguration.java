@@ -59,7 +59,7 @@ public class BaseConfiguration {
 
 			break;
 
-		case "iexplore":
+		case "iexplorer":
 			driver = browserFactory.initIEBrowser();
 
 			break;
