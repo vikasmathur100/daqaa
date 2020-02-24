@@ -5,12 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import com.cucumber.dataprovider.ConfigManager;
+import com.cucumber.configuration.ConfigManager;
 import com.cucumber.listener.Reporter;
 
 public class HomePage extends BasePage {
 
-	ConfigManager appData = new ConfigManager("Sys");
+	private ConfigManager appData = new ConfigManager();
 
 	@FindBy(css = "#tsf > div:nth-child(2) > div.A8SBwf > div.RNNXgb > div > div.a4bIc > input")
 	private WebElement searchInput;

@@ -1,4 +1,4 @@
-package com.cucumber.dataprovider;
+package com.cucumber.configuration;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -7,25 +7,23 @@ import java.util.Properties;
 
 import org.testng.Assert;
 
+/**
+ * Retrieve properties file based to retrieve properties based on key values
+ * 
+ * @author vikas
+ */
 public class ConfigManager {
 
 	private Properties properties = new Properties();
 	private String configFileName;
-	// private Logger log = Logger.getLogger("ConfigManager");
 	private String fileSeperator = System.getProperty("file.separator");
 
-	// The default constructor initializes and reads the key values from
-	// sys.properties file
+	/**
+	 * Default constructor
+	 * 
+	 */
 	public ConfigManager() {
 		configFileName = "Sys";
-	}
-	
-
-	// The parameterized constructor when supplied with "app" as configFile name
-	// initializes and
-	// reads the key values from app.properties
-	public ConfigManager(String configname) {
-		configFileName = configname;
 	}
 
 	/**
@@ -74,35 +72,13 @@ public class ConfigManager {
 	}
 
 	/**
-	 * This method helps to write any new key value pairs to app.properties
-	 * file.
-	 * 
-	 * @param sKey
-	 * @param sData
-	 * @throws Exception
-	 */
-	/*
-	 * public void writeProperty(String sKey,String sData) {
-	 * if(sKey.trim().length()>0){ try { PropertiesConfiguration config = null;
-	 * config = new PropertiesConfiguration(getConfigFilePath(configFileName));
-	 * 
-	 * config.setProperty(sKey, sData); config.getLayout(); config.save(); }
-	 * catch (ConfigurationException e) { Assert.fail(
-	 * "cannot write to properties file..."+e.getMessage()+e.getStackTrace());
-	 * }} else{ Assert.fail(
-	 * "cannot write to properties file...Please check if key value is empty");
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
-	/**
 	 * 
 	 * This method is used to get the path of specified properties file name
 	 *
 	 * @param File
-	 *            , Need to pass the name of properties file
-	 * @return , returns the file path of the specified properties file
+	 *            Need to pass the name of properties file
+	 * @return 
+	 *            returns the file path of the specified properties file
 	 */
 	public String getConfigFilePath(String File) {
 		String configFilePath;
@@ -119,5 +95,4 @@ public class ConfigManager {
 	public String getConfigFolderPath() {
 		return System.getProperty("user.dir") + fileSeperator + "ConfigFiles";
 	}
-
 }
