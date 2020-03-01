@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -8,6 +9,12 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<dependencies>
+		<dependency>
+			<groupId>net.rcarz</groupId>
+			<artifactId>jira-client</artifactId>
+			<version>0.5</version>
+			<scope>compile</scope>
+		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -26,13 +33,11 @@
 			<artifactId>selenium-java</artifactId>
 			<version>3.11.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.vimalselvam</groupId>
 			<artifactId>cucumber-extentsreport</artifactId>
 			<version>3.0.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
@@ -77,17 +82,39 @@
 					<artifactId>selenium-java</artifactId>
 				</exclusion>
 			</exclusions>
-
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.1</version>
 		</dependency>
-
 	</dependencies>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>qmetrytestmanager-mvn-repo</id>
+			<name>QMetry Test Manager Maven Repository</name>
+			<url>https://raw.github.com/qmetry/qtm4j-maven-uploader/mvn-repo/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.qmetry</groupId>
+				<artifactId>automation</artifactId>
+				<version>1.0.3</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>CucumberFileUpload</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>

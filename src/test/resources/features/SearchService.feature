@@ -1,11 +1,12 @@
-Feature: Google Searching
+Feature: Google Searchin
 
 @SmokeTest
-Scenario Outline: Simple Google search
+Scenario Outline: Search for state capitals
 Given the user selects to search using Google
-When the user searches for "<phrase>"
-Then search results are displayed using "<phrase>"
+When the user searches for capital of "<state>"
+Then search results are displayed using "<capital>"
   
 Examples:
-    |    phrase     |
-    |    DAQAA      |
+    |    state      | capital    |
+    |    Iowa       | Des Moines |
+    |   Kansas      | Topeka     |

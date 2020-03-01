@@ -18,7 +18,7 @@ public class HomePage extends BasePage {
 	@FindBy(xpath = "//input[@value='Google Search']")
 	private WebElement searchBtn;
 	
-	@FindBy(css = "#rso > div:nth-child(1) > div > div > div > div > div.r > a > h3")
+	@FindBy(css = "#rso > div:nth-child(3) > div > div:nth-child(1) > div > div > div.r > a > h3")
 	private WebElement searchResult;
 
 	public HomePage() {
@@ -50,6 +50,7 @@ public class HomePage extends BasePage {
 	}
 	
 	public void resultContains(String search) {
+		
 		try {
 			Assert.assertTrue(getElementText(searchResult).contains(search));
 		} catch (Exception e) {

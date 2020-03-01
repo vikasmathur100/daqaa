@@ -15,9 +15,9 @@ public class HomeStep {
 		homepage.openAtHomepage();
 	}
 	
-	@When("^the user searches for \"([^\\\"]*)\"$")
+	@When("^the user searches for capital of \"([^\\\"]*)\"$")
 	public void whenSearchFor(String search) {
-		homepage.enterSearchField(search);
+		homepage.enterSearchField("Capital of " + search);
 		homepage.clickSearchBtn();
 	}
 	
