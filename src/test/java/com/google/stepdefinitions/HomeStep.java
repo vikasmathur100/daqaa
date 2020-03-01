@@ -6,6 +6,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+/**
+ * This class has step definitions for all the homepage related steps
+ * 
+ * @author vikas
+ *
+ */
 public class HomeStep {
 
 	private HomePage homepage = new HomePage();
@@ -25,5 +31,4 @@ public class HomeStep {
 	public void thenSearchResultsDisp(String search) {
 		homepage.resultContains(search);
 	}
-
 }
