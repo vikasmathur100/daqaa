@@ -16,12 +16,12 @@ public class HomeStep {
 
 	private HomePage homepage = new HomePage();
 
-	@Given("^the user selects to search using Google$")
+	@Given("^the student selects to search using Google$")
 	public void givenStartOnHomepage() {
 		homepage.openAtHomepage();
 	}
 	
-	@When("^the user searches for capital of \"([^\\\"]*)\"$")
+	@When("^the student searches for capital of \"([^\\\"]*)\"$")
 	public void whenSearchFor(String search) {
 		homepage.enterSearchField("Capital of " + search);
 		homepage.clickSearchBtn();

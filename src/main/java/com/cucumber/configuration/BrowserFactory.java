@@ -81,8 +81,8 @@ public class BrowserFactory {
 			String cloud = appData.getProperty("Cloud.Host.URL");
 
 			options.addArguments("start-maximized");
-			options.setCapability("username", "vikasmathur");
-			options.setCapability("accessKey", "76ffb152-d07e-42f0-a41a-0f9bb8c99078");
+			options.setCapability("username", appData.getProperty("sauceUsername"));
+			options.setCapability("accessKey", appData.getProperty("sauceAccessKey"));
 			options.setCapability("platform", OSName);
 			options.setCapability("name", session);
 			driver = new RemoteWebDriver(new URL(cloud), options);

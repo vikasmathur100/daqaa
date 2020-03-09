@@ -1,9 +1,9 @@
-Feature: Google Searchin
+Feature: Google Search
 
 @SmokeTest
 Scenario Outline: Search for state capitals
-Given the user selects to search using Google
-When the user searches for capital of "<state>"
+Given the student selects to search using Google
+When the student searches for capital of "<state>"
 Then search results are displayed using "<capital>"
   
 Examples:
