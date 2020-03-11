@@ -11,13 +11,4 @@
 			<class name="com.google.runner.TestRunner" />
 		</classes>
 	</test>
-	<test name="DAQAA Automation Tests - Firefox" annotations="JDK"
-		preserve-order="true">
-		<parameter name="browserType" value="firefox" />
-		<parameter name="OSName" value="Windows 10" />
-		<parameter name="session" value="DAQAA Automation Tests" />
-		<classes>
-			<class name="com.google.runner.TestRunner" />
-		</classes>
-	</test>
 </suite>
