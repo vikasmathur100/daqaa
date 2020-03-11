@@ -31,6 +31,50 @@ public class BasePage extends TestRunner {
 	private Actions builder = new Actions(getDriver());
 	protected Logger log = Logger.getLogger("Action Class");
 
+	
+	public void click(WebElement element) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			element.click();
+			Reporter.addStepLog("Current url = " + getURL());
+		} catch (Exception e) {
+			log.warning("click: error while clicking " + element);
+		}
+	}
+
+	public void JSClick(WebElement element) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("arguments[0].click();", element);
+			Reporter.addStepLog("Current url = " + getURL());
+		} catch (Exception e) {
+			log.warning("JSClick: Exception while clicking the " + element);
+		}
+	}	
+	
+	public void clearAndType(WebElement element, String text) {
+		try {
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+			element.clear();
+			element.sendKeys(text);
+			Reporter.addStepLog("Current url = " + getURL());
+		} catch (Exception e) {
+			log.warning("clearAndType: Exception while typing into: " + element);
+		}
+
+	}
+
+	public void javascriptType(WebElement element, String text) {
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor) driver;
+			jse.executeScript("arguments[0].value='" + text + "';", element);
+			Reporter.addStepLog("Current url = " + getURL());
+		} catch (Exception e) {
+			log.warning("javascriptType: Exception while entering value into: " + element);
+		}
+	}
+	
 	public void resizeBrowserWindow(int width, int height) {
 		Dimension dimension = new Dimension(width, height);
 		getDriver().manage().window().setSize(dimension);
@@ -192,48 +236,6 @@ public class BasePage extends TestRunner {
 			Thread.sleep(1000);
 		} catch (Exception e) {
 			log.warning("hoverOverElement: Exception while hovering over the element by id " + element);
-		}
-	}
-
-	public void click(WebElement element) {
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-			element.click();
-			Reporter.addStepLog("Current url = " + getURL());
-		} catch (Exception e) {
-			log.warning("click: error while clicking " + element);
-		}
-	}
-
-	public void JSClick(WebElement element) {
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("arguments[0].click();", element);
-			Reporter.addStepLog("Current url = " + getURL());
-		} catch (Exception e) {
-			log.warning("JSClick: Exception while clicking the " + element);
-		}
-	}
-	
-	public void clearAndType(WebElement element, String text) {
-		try {
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-			element.clear();
-			element.sendKeys(text);
-			Reporter.addStepLog("Current url = " + getURL());
-		} catch (Exception e) {
-			log.warning("clearAndType: Exception while typing into: " + element);
-		}
-
-	}
-	public void javascriptType(WebElement element, String text) {
-		try {
-			JavascriptExecutor jse = (JavascriptExecutor) driver;
-			jse.executeScript("arguments[0].value='" + text + "';", element);
-			Reporter.addStepLog("Current url = " + getURL());
-		} catch (Exception e) {
-			log.warning("javascriptType: Exception while entering value into: " + element);
 		}
 	}
 
